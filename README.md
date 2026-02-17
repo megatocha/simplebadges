@@ -20,6 +20,27 @@ A beautiful, modern web app for creating [Shields.io](https://shields.io) badges
 - 📋 **One-Click Export** — URL, Markdown, or HTML — copy with a single click
 - 🌙 **Dark / Light Theme** — toggleable with smooth transitions
 
+## 🧩 Screenshots
+
+<details>
+<summary><strong>📷 Click to open</strong></summary>
+<div align="center">
+
+### Static badge
+<img width="1920" height="960" alt="firefox_kAGAU3eRTt" src="https://github.com/user-attachments/assets/81a83ddd-82ed-444d-80d6-b77099ecd047" />
+
+### Dynamic badge
+<img width="1920" height="960" alt="firefox_OhPelP7TKP" src="https://github.com/user-attachments/assets/26aff79a-9d80-420b-b6c1-d8e32c72c134" />
+
+### Preview and copy
+<img width="995" height="107" alt="firefox_m015SMOYtw" src="https://github.com/user-attachments/assets/a1831484-d364-4e86-aff5-bbdd328417ba" />
+
+### Light Theme
+<img width="1920" height="960" alt="firefox_prsMMNktlG" src="https://github.com/user-attachments/assets/45b27507-1456-449a-a30d-12744b3a64a8" />
+
+</div>
+</details>
+
 ## 🚀 Quick Start
 
 ### Local Development
@@ -81,17 +102,6 @@ Each integration supports **optional parameters** — only fill in what you need
 | **Icons** | Lucide React + Simple Icons |
 | **Color Picker** | react-colorful |
 | **Toast** | Sonner |
-
-## 🧩 Screenshots
-
-<details>
-<summary><strong>📷 Click to open</strong></summary>
-<div align="center">
-
-> _Screenshots will be added after deployment_
-
-</div>
-</details>
 
 ## 📁 Project Structure
 
