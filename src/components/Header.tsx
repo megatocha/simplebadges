@@ -1,5 +1,5 @@
 import { useBadgeStore } from '@/store/badge-store'
-import { Sun, Moon, Shield } from 'lucide-react'
+import { Sun, Moon } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export function Header() {
@@ -11,9 +11,7 @@ export function Header() {
             <div className="mx-auto max-w-5xl flex items-center justify-between px-6 py-4">
                 {/* Logo */}
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10">
-                        <Shield className="w-5 h-5 text-primary" />
-                    </div>
+                    <img src="/logo.svg" alt="Logo" className="w-9 h-9" />
                     <div>
                         <h1 className="text-lg font-bold tracking-tight text-foreground">
                             Simple Badges
