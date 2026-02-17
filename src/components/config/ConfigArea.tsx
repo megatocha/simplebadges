@@ -1,11 +1,12 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { MainTab } from '@/components/config/MainTab'
 import { DynamicMainTab } from '@/components/config/DynamicMainTab'
-import { LogoTab } from '@/components/config/LogoTab'
 import { ExtraTab } from '@/components/config/ExtraTab'
-import { Settings, Image, Sliders, RotateCcw, Zap, Type } from 'lucide-react'
+import { Settings, Image, Sliders, RotateCcw, Zap, Type, Loader2 } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
+
+const LogoTab = lazy(() => import('@/components/config/LogoTab').then(m => ({ default: m.LogoTab })))
 import { useBadgeStore } from '@/store/badge-store'
 import type { BadgeMode } from '@/store/badge-store'
 
@@ -93,7 +94,14 @@ export function ConfigArea() {
                     {badgeMode === 'static' ? <MainTab /> : <DynamicMainTab />}
                 </TabsContent>
                 <TabsContent value="logo" className="mt-0 animate-in fade-in-0 slide-in-from-bottom-1 duration-200">
-                    <LogoTab />
+                    <Suspense fallback={
+                        <div className="flex items-center justify-center py-12 gap-2 text-muted-foreground">
+                            <Loader2 className="w-5 h-5 animate-spin" />
+                            <span className="text-sm">Loading icons...</span>
+                        </div>
+                    }>
+                        <LogoTab />
+                    </Suspense>
                 </TabsContent>
                 <TabsContent value="extra" className="mt-0 animate-in fade-in-0 slide-in-from-bottom-1 duration-200">
                     <ExtraTab />
