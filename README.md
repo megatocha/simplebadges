@@ -20,6 +20,7 @@ A beautiful, modern web app for creating [Shields.io](https://shields.io) badges
 - 🎨 **Logo Picker** — search 2,500+ icons from [Simple Icons](https://simpleicons.org/), or upload your own
 - 🔄 **Live Preview** — instant debounced badge preview as you type
 - 📋 **One-Click Export** — URL, Markdown, or HTML — copy with a single click
+- 📥 **Import** — import badges from URL, Markdown, or HTML
 - 🌙 **Dark / Light Theme** — toggleable with smooth transitions
 
 ## 🧩 Screenshots
