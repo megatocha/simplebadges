@@ -40,6 +40,7 @@ export interface BadgeState {
 interface BadgeActions {
     setField: <K extends keyof BadgeState>(key: K, value: BadgeState[K]) => void
     setIntegrationParam: (key: string, value: string) => void
+    importBadge: (fields: Partial<BadgeState>) => void
     resetBadge: () => void
     toggleTheme: () => void
 }
@@ -96,6 +97,18 @@ export const useBadgeStore = create<BadgeState & BadgeActions>()((set) => ({
         set((state) => ({
             integrationParams: { ...state.integrationParams, [key]: value },
         })),
+
+    importBadge: (fields) =>
+        set((state) => {
+            const modeDefaults = fields.badgeMode === 'dynamic' ? dynamicDefaults : staticDefaults
+            return {
+                ...defaultBadgeState,
+                ...modeDefaults,
+                ...fields,
+                theme: state.theme,
+                exportFormat: state.exportFormat,
+            }
+        }),
 
     resetBadge: () =>
         set((state) => {

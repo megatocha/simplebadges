@@ -1,5 +1,5 @@
 import { useBadgeStore } from '@/store/badge-store'
-import { Sun, Moon } from 'lucide-react'
+import { Sun, Moon, Import } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const GitHubIcon = () => (
@@ -8,7 +8,11 @@ const GitHubIcon = () => (
     </svg>
 )
 
-export function Header() {
+interface HeaderProps {
+    onImportClick?: () => void
+}
+
+export function Header({ onImportClick }: HeaderProps) {
     const theme = useBadgeStore((s) => s.theme)
     const toggleTheme = useBadgeStore((s) => s.toggleTheme)
 
@@ -30,6 +34,16 @@ export function Header() {
 
                 {/* Right actions */}
                 <div className="flex items-center gap-2">
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={onImportClick}
+                        className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-secondary hover:bg-accent transition-colors text-muted-foreground hover:text-foreground cursor-pointer"
+                        aria-label="Import badge"
+                    >
+                        <Import className="w-4 h-4" />
+                        <span className="text-sm font-medium hidden sm:inline">Import</span>
+                    </motion.button>
                     <a
                         href="https://github.com/megatocha/simplebadges"
                         target="_blank"

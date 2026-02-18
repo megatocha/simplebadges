@@ -2,12 +2,14 @@ import { Header } from '@/components/Header'
 import { PreviewArea } from '@/components/PreviewArea'
 import { ConfigArea } from '@/components/config/ConfigArea'
 import { Footer } from '@/components/Footer'
+import { ImportDialog } from '@/components/ImportDialog'
 import { Toaster } from '@/components/ui/sonner'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useBadgeStore } from '@/store/badge-store'
 
 export default function App() {
   const theme = useBadgeStore((s) => s.theme)
+  const [importOpen, setImportOpen] = useState(false)
 
   // Initialize dark mode on mount
   useEffect(() => {
@@ -20,10 +22,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
-      <Header />
+      <Header onImportClick={() => setImportOpen(true)} />
       <PreviewArea />
       <ConfigArea />
       <Footer />
+      <ImportDialog open={importOpen} onOpenChange={setImportOpen} />
       <Toaster
         position="bottom-right"
         toastOptions={{
